@@ -1,0 +1,1 @@
+FROM sscaling/jmx-prometheus-exporter:0.11.0

@@ -1,0 +1,6 @@
+hostPort: 10.200.200.42:8080
+username:
+password:
+
+rules:
+- pattern: ".*"
