@@ -1,21 +1,14 @@
 #PLACEHOLDER EXAMPLE - NOTHING HERE YET
 
-version: "1"
+version: "3"
 services:
-  web:
-    # replace username/repo:tag with your name and image details
-    image: username/repo:tag
-    deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
+  prometheus:
+    build: $PWD/prometheus
     ports:
-      - "4000:80"
-    networks:
-      - webnet
-networks:
-  webnet:
+      - "9090:9090"
+  tomcat:
+    build: $PWD/tomcat
+    ports:
+      - "8888:8080"
+      - "9000:9000"
+      

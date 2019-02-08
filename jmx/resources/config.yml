@@ -1,4 +1,5 @@
-hostPort: 10.200.200.42:8080
+---
+hostPort: localhost:8088
 username:
 password:
 
