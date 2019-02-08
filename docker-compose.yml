@@ -1,14 +1,21 @@
-#PLACEHOLDER EXAMPLE - NOTHING HERE YET
-
 version: "3"
 services:
   prometheus:
-    build: $PWD/prometheus
+    build:
+      context: ./prometheus
     ports:
       - "9090:9090"
   tomcat:
-    build: $PWD/tomcat
+    build:
+      context: ./tomcat
     ports:
       - "8888:8080"
       - "9000:9000"
-      
+  jmx:
+    build:
+      context: ./jmx
+    ports:
+      - "9072:9072"
+    environment:
+      - DEST_PORT=9000
+      - DEST_HOST=tomcat
